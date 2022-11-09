@@ -14,10 +14,18 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    @guest
+                        {{ __('You are not logged in!') }}
+                    @else
+                        {{ __('You are logged in!') }}
+                    @endguest
                 </div>
+                <div class="card-footer">Laravel <span class="badge bg-primary">v{{ Illuminate\Foundation\Application::VERSION }}</span> + PHP <span class="badge bg-primary">v{{ PHP_VERSION }}</span> + Bootstrap <span class="badge bg-primary" id="bootstrap-version"></span></div>
             </div>
         </div>
     </div>
 </div>
+<script type="module">
+    document.getElementById("bootstrap-version").innerHTML = 'v' + bootstrap.Tooltip.VERSION
+</script>
 @endsection
