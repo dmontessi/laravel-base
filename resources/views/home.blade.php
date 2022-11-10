@@ -15,9 +15,9 @@
                     @endif
 
                     @guest
-                        {{ __('You are not logged in!') }}
+                        {{ __('You are not logged in!') }} <i class="bi bi-x-circle-fill"></i>
                     @else
-                        {{ __('You are logged in!') }}
+                        {{ __('You are logged in!') }} <i class="bi bi-check-circle-fill"></i>
                     @endguest
                 </div>
                 <div class="card-footer">Laravel <span class="badge bg-primary">v{{ Illuminate\Foundation\Application::VERSION }}</span> + PHP <span class="badge bg-primary">v{{ PHP_VERSION }}</span> + Bootstrap <span class="badge bg-primary" id="bootstrap-version"></span></div>
